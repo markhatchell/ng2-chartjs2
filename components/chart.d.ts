@@ -20,8 +20,6 @@ export declare class ChartComponent implements OnInit, OnDestroy, DoCheck {
     labels: string[];
     data: Chart.Dataset[];
     type: Chart.Type;
-    height: number | string;
-    width: number | string;
     options: Chart.Options;
     private _labels;
     private _data;

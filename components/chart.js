@@ -185,14 +185,6 @@ var ChartComponent = (function () {
     __decorate([
         core_1.Input(), 
         __metadata('design:type', Object)
-    ], ChartComponent.prototype, "height", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Object)
-    ], ChartComponent.prototype, "width", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Object)
     ], ChartComponent.prototype, "options", void 0);
     __decorate([
         core_1.Output(), 
@@ -208,7 +200,7 @@ var ChartComponent = (function () {
     ], ChartComponent.prototype, "onHover", void 0);
     ChartComponent = __decorate([
         core_1.Directive({
-            selector: '[chart]',
+            selector: 'canvas[chart]',
             styles: [':host {display: block;}']
         }), 
         __metadata('design:paramtypes', [core_1.ElementRef])
