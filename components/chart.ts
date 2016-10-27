@@ -5,7 +5,7 @@ declare var Chart: any;
 
 @Component({
   selector: 'chart',
-  template: `<canvas></canvas>`,
+  template: `<canvas [width]="width" [height]="height"></canvas>`,
   styles: [':host {display: block;}']
 })
 export class ChartComponent implements OnInit, OnDestroy, DoCheck {
@@ -28,6 +28,8 @@ export class ChartComponent implements OnInit, OnDestroy, DoCheck {
   @Input() labels: string [] = [];
   @Input() data: Chart.Dataset[] = [];
   @Input() type: Chart.Type = 'bar';
+  @Input() height: number | string;
+  @Input() width: number | string;
   @Input() options: Chart.Options;
 
   private _labels: string[] = [];
@@ -538,7 +540,7 @@ export namespace Chart {
     /**
      * The fill color under the line. See Colors
      */
-    backgroundColor?: string[];
+    backgroundColor?: string | string[];
     /**
      * The width of the line in pixels
      */
@@ -546,7 +548,7 @@ export namespace Chart {
     /**
      * The color of the line.
      */
-    borderColor?: string|string[];
+    borderColor?: string | string[];
     /**
      * Cap style of the line.
      */
