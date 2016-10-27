@@ -1,11 +1,10 @@
 import {
-  Component, ElementRef, Input, OnInit, OnDestroy, Output, EventEmitter, DoCheck
+  Directive, ElementRef, Input, OnInit, OnDestroy, Output, EventEmitter, DoCheck
 } from '@angular/core';
 declare var Chart: any;
 
-@Component({
-  selector: 'chart',
-  template: `<canvas [width]="width" [height]="height"></canvas>`,
+@Directive({
+  selector: '[chart]',
   styles: [':host {display: block;}']
 })
 export class ChartComponent implements OnInit, OnDestroy, DoCheck {
@@ -49,7 +48,7 @@ export class ChartComponent implements OnInit, OnDestroy, DoCheck {
       return;
     }
 
-    this.canvas = this.element.nativeElement.children[0];
+    this.canvas = this.element.nativeElement;
     this.ctx = this.canvas.getContext("2d");
 
     // if the options param is provided, we will not use the other inputs
