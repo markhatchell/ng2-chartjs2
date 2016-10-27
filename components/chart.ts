@@ -4,8 +4,7 @@ import {
 declare var Chart: any;
 
 @Directive({
-  selector: 'canvas[chart]',
-  styles: [':host {display: block;}']
+  selector: 'canvas[chart]'
 })
 export class ChartComponent implements OnInit, OnDestroy, DoCheck {
   /**

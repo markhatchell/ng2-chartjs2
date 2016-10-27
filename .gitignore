@@ -2,4 +2,3 @@
 node_modules
 !systemjs.config.js
 aot
-*.metadata.json
