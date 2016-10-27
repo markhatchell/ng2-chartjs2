@@ -98,8 +98,8 @@ export declare class ChartComponent implements OnInit, OnDestroy, DoCheck {
 export declare namespace Chart {
     type Type = 'line' | 'bar' | 'radar' | 'polarArea' | 'doughnut' | 'pie';
     interface Options {
-        type: Type;
-        data: {
+        type?: Type;
+        data?: {
             labels: string[];
             datasets: Dataset[];
         };
