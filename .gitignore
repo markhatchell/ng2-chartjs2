@@ -1,8 +1,5 @@
 .idea
 node_modules
-*.d.ts
-*.js
 !systemjs.config.js
-*.map
 aot
 *.metadata.json
