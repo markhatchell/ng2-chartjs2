@@ -200,7 +200,7 @@ var ChartComponent = (function () {
     ], ChartComponent.prototype, "onHover", void 0);
     ChartComponent = __decorate([
         core_1.Directive({
-            selector: 'canvas[chart]',
+            selector: 'canvas[asChart]',
             styles: [':host {display: block;}']
         }), 
         __metadata('design:paramtypes', [core_1.ElementRef])
