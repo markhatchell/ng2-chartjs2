@@ -82,7 +82,7 @@ export class ChartComponent implements OnInit, OnDestroy, DoCheck {
     // destroy the chart object
     this.destroy();
   }
-  
+
   ngDoCheck(): void {
     if(
       this.data !== this._data
