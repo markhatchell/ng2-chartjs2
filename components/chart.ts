@@ -4,8 +4,7 @@ import {
 declare var Chart: any;
 
 @Directive({
-  selector: 'canvas[chart]',
-  styles: [':host {display: block;}']
+  selector: 'canvas[chart]'
 })
 export class ChartComponent implements OnInit, OnDestroy, DoCheck {
   /**
@@ -49,6 +48,15 @@ export class ChartComponent implements OnInit, OnDestroy, DoCheck {
     this.canvas = this.element.nativeElement;
     this.ctx = this.canvas.getContext("2d");
 
+
+    // if the options param is provided, and data and labels are provided
+    // merge data and labels in to options.
+    if (this.options && this.labels && this.data && this.type) {
+      this.options.type = this.type;
+      this.options.data.labels = this.labels;
+      this.options.data.datasets = this.data;
+    }
+
     // if the options param is provided, we will not use the other inputs
     // this allows maximum customization and control
     if (!this.options) {
@@ -74,7 +82,7 @@ export class ChartComponent implements OnInit, OnDestroy, DoCheck {
     // destroy the chart object
     this.destroy();
   }
-  
+
   ngDoCheck(): void {
     if(
       this.data !== this._data
