@@ -53,8 +53,10 @@ export class ChartComponent implements OnInit, OnDestroy, DoCheck {
     // merge data and labels in to options.
     if (this.options && this.labels && this.data && this.type) {
       this.options.type = this.type;
-      this.options.data.labels = this.labels;
-      this.options.data.datasets = this.data;
+      this.options.data = {
+        datasets: this.data,
+        labels: this.labels
+      };
     }
 
     // if the options param is provided, we will not use the other inputs
