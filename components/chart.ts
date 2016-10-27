@@ -4,7 +4,7 @@ import {
 declare var Chart: any;
 
 @Directive({
-  selector: '[chart]',
+  selector: 'canvas[chart]',
   styles: [':host {display: block;}']
 })
 export class ChartComponent implements OnInit, OnDestroy, DoCheck {
@@ -27,8 +27,6 @@ export class ChartComponent implements OnInit, OnDestroy, DoCheck {
   @Input() labels: string [] = [];
   @Input() data: Chart.Dataset[] = [];
   @Input() type: Chart.Type = 'bar';
-  @Input() height: number | string;
-  @Input() width: number | string;
   @Input() options: Chart.Options;
 
   private _labels: string[] = [];
