@@ -109,9 +109,20 @@ export declare namespace Chart {
             };
             legend?: LegendConfiguration;
             scales?: {
+                xAxes?: Array<{
+                    ticks?: {
+                        beginAtZero: boolean;
+                        min?: number;
+                        max?: number;
+                        stepSize?: number;
+                    };
+                }>;
                 yAxes?: Array<{
                     ticks?: {
                         beginAtZero: boolean;
+                        min?: number;
+                        max?: number;
+                        stepSize?: number;
                     };
                 }>;
             };
