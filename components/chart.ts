@@ -212,7 +212,22 @@ export namespace Chart {
       };
       legend?: LegendConfiguration;
       scales?: {
-        yAxes?: Array<{ticks?: {beginAtZero: boolean}}>
+        xAxes?: Array<{
+          ticks?: {
+            beginAtZero: boolean;
+            min?: number;
+            max?: number;
+            stepSize?: number;
+          }
+        }>
+        yAxes?: Array<{
+          ticks?: {
+            beginAtZero: boolean;
+            min?: number;
+            max?: number;
+            stepSize?: number;
+          }
+        }>
       };
       /**
        * Resizes when the canvas container does.
